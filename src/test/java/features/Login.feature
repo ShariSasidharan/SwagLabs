@@ -6,3 +6,4 @@ Feature: Login as Standard User
     When I give the login details of Standard User with user id "standard_user"
     Then I logged in successfully
     #comment test
+    #comment as part of new branch
