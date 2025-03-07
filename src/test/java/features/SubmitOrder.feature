@@ -6,7 +6,7 @@ Background:
     Then I logged in successfully
 
   @SubmitOrder
-  Scenario: Submit order in the Saucedemo page by logging in as Standard user
+  Scenario: Submit order in the Saucedemo website by logging in as Standard user
     Given I am in the product detail page 
     Then I select a single product and add to Cart
     Then I click on the Cart icon
@@ -14,4 +14,4 @@ Background:
     And I click on checkout
     And I enter the checkout Information
     And I verify the Checkout Overview
-    #And I verify the final page
+    And I verify the final page

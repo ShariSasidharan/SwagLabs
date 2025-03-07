@@ -22,13 +22,20 @@ public class Login_page {
 	WebElement password_fld;
 	private @FindBy(xpath="//input[@id='login-button']")
 	WebElement login_btn;
+	private @FindBy(xpath="//button[@class='error-button']")
+	WebElement loginerrormsg_txt;
 	
 	public void performLogin(String username) throws IOException, InterruptedException
 	{
-		//DriverContext.Driver.wait(2000);
 		username_fld.sendKeys(username);
 		password_fld.sendKeys(UtilityFetchProperty.fetchPropertyValue(username));
 		login_btn.click();
+	}
+
+	public String loginError(){
+		String errorLoginMessage;
+        errorLoginMessage = loginerrormsg_txt.getText();
+        return errorLoginMessage;
 	}
 
 }

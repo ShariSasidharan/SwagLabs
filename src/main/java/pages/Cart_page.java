@@ -24,10 +24,10 @@ public class Cart_page {
 	WebElement Checkout_btn;
 	
 	
-	public void verifyProductInCheckOutPage()
-	{
+	//public void verifyProductInCheckOutPage()
+	//{
 		
-	}
+	//}
 	
 	public void clickOnCheckout()
 	{
