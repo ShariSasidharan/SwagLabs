@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import base.DriverContext;
@@ -11,13 +13,13 @@ public class CheckoutFinish_page {
 	{
 		PageFactory.initElements(DriverContext.Driver, this);
 	}
-	
-	CommonMethods commonmethods = new CommonMethods();
 
+	private @FindBy(xpath="//h2[normalize-space()='Thank you for your order!']")
+	WebElement success_txt;
 		
-	public void verifyCheckoutFinish()
+	public String verifyCheckoutFinish()
 	{
-		
+		return success_txt.getText();
 	}
 
 }

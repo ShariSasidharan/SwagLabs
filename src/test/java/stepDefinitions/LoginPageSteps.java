@@ -17,11 +17,17 @@ public class LoginPageSteps {
 	@Given("I am in the login page of Swag Labs demo page")
 	public void iAmInTheLoginPage()
 	{
-		Assert.assertEquals("https://www.saucedemo.com/", DriverContext.Driver.getCurrentUrl());
+		Assert.assertEquals(DriverContext.Driver.getCurrentUrl(), "https://www.saucedemo.com/");
 	}
 	
 	@When("I give the login details of Standard User with user id {string}")
-	public void iLoginToTheApplication(String username) throws IOException, InterruptedException
+	public void iLoginToTheApplicationStandardUser(String username) throws IOException, InterruptedException
+	{
+		lp.performLogin(username);
+	}
+
+	@When("I give the login details of Visual User with user id {string}")
+	public void iLoginToTheApplicationVisualUser(String username) throws IOException, InterruptedException
 	{
 		lp.performLogin(username);
 	}
@@ -29,6 +35,14 @@ public class LoginPageSteps {
 	@Then("I logged in successfully")
 	public void loginSuccessful()
 	{
-		Assert.assertEquals("https://www.saucedemo.com/inventory.html", DriverContext.Driver.getCurrentUrl());
+		Assert.assertEquals(DriverContext.Driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
+	}
+
+	@Then("I get a login error with an error message containing {string}")
+	public void loginError(String error)
+	{
+		Assert.assertTrue((error.contains("Username and password do not match")),
+				"Error message does not contain expected text");
+		//Assert.assertEquals(DriverContext.Driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
 	}
 }

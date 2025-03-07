@@ -17,11 +17,11 @@ public class Home_page {
 
 	private @FindBy(xpath="//span[@class='title']")
 	WebElement homepage_txt;
+
 	String products;
 	
 	public String homePage()
 	{
 		return homepage_txt.getText();
-		//return products;
 	}
 }

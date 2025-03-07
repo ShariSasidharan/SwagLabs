@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
+import org.testng.Assert;
 import pages.CheckoutFinish_page;
 
 public class CheckoutFinishPageSteps {
@@ -10,7 +11,8 @@ public class CheckoutFinishPageSteps {
 	@And("I verify the final page")
 	public void verifyCheckoutFinish()
 	{
-		//verify the success message
+		String successText = cp.verifyCheckoutFinish();
+		Assert.assertEquals(successText, "Thank you for your order!");
 	}
 
 }

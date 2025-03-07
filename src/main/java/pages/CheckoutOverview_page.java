@@ -18,8 +18,9 @@ public class CheckoutOverview_page {
 
 	private @FindBy(xpath="//button[@id='finish']")
 	WebElement Finish_btn;
-	
-	//verify other displayed fields too
+	//private @FindBy(xpath="//div[normalize-space()='Payment Information:']")
+	//WebElement pymntinfo_txt;
+
 	
 	public void verifyCheckoutOverview()
 	{

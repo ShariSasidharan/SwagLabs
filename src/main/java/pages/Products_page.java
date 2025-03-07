@@ -20,6 +20,8 @@ public class Products_page {
 	WebElement AddToCart_btn;
 	private @FindBy(xpath="//a[@class='shopping_cart_link']")
 	WebElement Cart_icon;
+	//private @FindBy(xpath="//div[normalize-space()='Sauce Labs Onesie']")
+	//WebElement productonesietitle_txt;
 	
 	
 	public void addToCart()
