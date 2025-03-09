@@ -16,18 +16,16 @@ public class Cart_page {
 	
 	CommonMethods commonmethods = new CommonMethods();
 
-	//private @FindBy(xpath="//button[@id='add-to-cart-sauce-labs-onesie']")
-	//WebElement Checkout_btn;
-	// verify the product selected in the cart WebElement ;
-	
+	private @FindBy(xpath="//div[@class='inventory_item_name']")
+	WebElement CartItem_txt;
 	private @FindBy(xpath="//button[@id='checkout']")
 	WebElement Checkout_btn;
 	
 	
-	//public void verifyProductInCheckOutPage()
-	//{
-		
-	//}
+	public String getCartItemName()
+	{
+		return CartItem_txt.getText();
+	}
 	
 	public void clickOnCheckout()
 	{

@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 glue={"stepDefinitions","base"},
 monochrome=true,
 plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-tags = "@Logout")
+tags = "@PositiveStandardUserLogin or @NegativeVisualUserLogin or @SubmitOrder or @Logout")
 
 @Test
 public class RunnerTest extends AbstractTestNGCucumberTests{
