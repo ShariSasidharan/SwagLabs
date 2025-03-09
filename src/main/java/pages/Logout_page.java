@@ -26,7 +26,7 @@ public class Logout_page {
     }
 
     public void clickLogout(){
-        commonmethods.staticWait(2000);
+        commonmethods.staticWait(1000);
         Logout_btn.click();
     }
 }

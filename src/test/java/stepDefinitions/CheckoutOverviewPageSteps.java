@@ -11,7 +11,15 @@ public class CheckoutOverviewPageSteps {
 	@And("I verify the Checkout Overview")
 	public void verifyCheckoutOverview()
 	{
-		cop.verifyCheckoutOverview();
+		String totalAmount = cop.getTotalAmount();
+		Assert.assertNotNull(totalAmount, "Total amount is null");
+		Assert.assertFalse(totalAmount.isEmpty(),"Total amount is empty");
+	}
+
+	@And("I click on the Finish button")
+	public void clickFinishButton()
+	{
+		cop.clickFinishButton();
 	}
 
 }

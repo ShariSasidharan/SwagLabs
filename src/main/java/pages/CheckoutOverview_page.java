@@ -18,13 +18,19 @@ public class CheckoutOverview_page {
 
 	private @FindBy(xpath="//button[@id='finish']")
 	WebElement Finish_btn;
-	//private @FindBy(xpath="//div[normalize-space()='Payment Information:']")
-	//WebElement pymntinfo_txt;
+	private @FindBy(xpath="//div[@class='summary_total_label']")
+	WebElement TotalAmnt_txt;
 
-	
-	public void verifyCheckoutOverview()
+	public String getTotalAmount()
+	{
+		return TotalAmnt_txt.getText().replaceAll("[^0-9.]","").trim();
+	}
+
+	public void clickFinishButton()
 	{
 		Finish_btn.click();
 	}
+
+
 
 }

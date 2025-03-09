@@ -7,12 +7,13 @@ import pages.Products_page;
 public class ProductPageSteps {
 	
 	Products_page pp = new Products_page();
-	
+	private static String selectedProductName;
 	
 	
 	@Then("I select a single product and add to Cart")
 	public void addProductToCart()
 	{
+		selectedProductName = pp.getProductName();
 		pp.addToCart();
 	}
 	
@@ -20,6 +21,11 @@ public class ProductPageSteps {
 	public void clickOnTheCartIcon()
 	{
 		pp.clickOnCartIcon();
+	}
+
+	public static String getSelectedProductName()
+	{
+		return selectedProductName;
 	}
 
 }

@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import base.DriverContext;
 import utilities.CommonMethods;
 
@@ -20,13 +19,20 @@ public class Products_page {
 	WebElement AddToCart_btn;
 	private @FindBy(xpath="//a[@class='shopping_cart_link']")
 	WebElement Cart_icon;
-	//private @FindBy(xpath="//div[normalize-space()='Sauce Labs Onesie']")
-	//WebElement productonesietitle_txt;
-	
-	
+	private @FindBy(xpath="//div[normalize-space()='Sauce Labs Onesie']")
+	WebElement ProductName_txt;
+
+	private String selectedProductName;
+
+    public String getProductName() {
+        selectedProductName = ProductName_txt.getText();
+		return selectedProductName;
+	}
+
 	public void addToCart()
 	{
 		commonmethods.staticWait(2000);
+		selectedProductName = ProductName_txt.getText();
 		AddToCart_btn.click();
 	}
 	
